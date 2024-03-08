@@ -4,7 +4,7 @@ resource "aws_docdb_cluster" "docdb" {
   master_username         = "admin1"
   master_password         = "roboshop1"
   skip_final_snapshot     = true                        # Value will be false in production. In Lab, we will be using true
-  db_subnet_group_name    = aws_docdb_subnet_group.DOCDB.name
+  db_subnet_group_name    = aws_docdb_subnet_group.docdb.name
 }
 
 # Creates DocDB Subnet group
