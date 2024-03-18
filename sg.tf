@@ -1,5 +1,5 @@
 # Creates Security Group
-resource "aws_security_group" "allow_docdb" {
+resource "aws_security_group" "allows_docdb" {
     name = "Roboshop allows traffic from docdb only"
     description = "allow only private traffic"
     vpc_id = data.terraform_remote_state.vpc.outputs.VPC_ID
