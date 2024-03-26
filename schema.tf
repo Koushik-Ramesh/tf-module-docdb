@@ -8,7 +8,7 @@ resource "null_resource" "schema" {
             wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
             curl -s -L -o /tmp/mongo.zip "https://github.com/stans-robot-project/mongo/archive/main.zip"
             unzip -o mongo.zip
-            cd mongo-main
+            cd /tmp/mongo-main
             mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1  < catalogue.js
             mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1  < users.js           
 
