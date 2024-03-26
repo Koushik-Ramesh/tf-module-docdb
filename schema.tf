@@ -10,7 +10,7 @@ resource "null_resource" "schema" {
             cd mongodb-main
             ls -ltr
             mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1  < catalogue.js
-            mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1  < users.js           
+            mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1 < users.js          
         EOF
     }
 }
