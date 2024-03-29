@@ -9,10 +9,10 @@ resource "null_resource" "schema" {
             unzip -o /tmp/mongodb.zip
             cd mongodb-main
             ls -ltr
-            mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1 < catalogue.js 
-            mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1 < users.js 
-        EOF
+            mongodb://admin1:roboshop1>@${aws_docdB_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < catalogue.js     
+            mongodb://admin1:roboshop1>@${aws_docdB_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < users.js
+         EOF
     }
 }
 
-#   
+#               mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile global-bundle.pem --username admin1 --password roboshop1 < catalogue.js 
