@@ -9,8 +9,8 @@ resource "null_resource" "schema" {
             unzip -o /tmp/mongodb.zip
             cd mongodb-main
             ls -ltr
-            mongodb://admin1:roboshop1>@${aws_docdB_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < catalogue.js     
-            mongodb://admin1:roboshop1>@${aws_docdB_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < users.js
+            mongodb://admin1:roboshop1>@${aws_docdb_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < catalogue.js     
+            mongodb://admin1:roboshop1>@${aws_docdb_cluster.docdb.endpoint}/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false  < users.js
          EOF
     }
 }
