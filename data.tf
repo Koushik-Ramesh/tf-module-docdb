@@ -19,8 +19,6 @@ data "aws_secretsmanager_secret_version" "secret_version" {
     secret_id = data.aws_secretsmanager_secret.secret.id
 }
 
-
-
 output "DOCDB_USERNAME" {
     value = jsondecode(data.aws_secretsmanager_secret_version.secret_version.secret_string)["DOCDB_USERNAME"]
 }

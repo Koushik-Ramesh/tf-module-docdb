@@ -8,7 +8,7 @@ resource "aws_docdb_cluster" "docdb" {
   vpc_security_group_ids  = [aws_security_group.allows_docdb.id]
 }
 
-# Creats DOCDB Instances and adds to the cluster
+# Creates DOCDB Instances and adds to the cluster
 resource "aws_docdb_cluster_instance" "cluster_instances" {
   count              = var.DOCDB_INSTANCE_COUNT
   identifier         = "roboshop-${var.ENV}-docdb"
